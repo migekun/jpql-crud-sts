@@ -6,10 +6,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="t_clients")
+@Table(name = "t_clients")
 public class Client {
 
-	@Id 
+	@Id
 	@Column(name="cli_nom")
 	private String nom;
 	

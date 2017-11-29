@@ -1,6 +1,5 @@
 package org.formacio.domain;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -8,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,12 +20,14 @@ public class Factura {
 	@Column(name="fac_id")
 	private Long id;
 	
-	@Column(name="fac_client")
+	@ManyToOne
+	@JoinColumn(name="fac_client")
 	private Client client;
 	
-	@Column(name="lin_factura")
-	private Set<LiniaFactura> linies = new HashSet<>();
-
+	@OneToMany
+	@JoinColumn(name="lin_factura")
+	private Set<LiniaFactura> linies;
+	
 	public Long getId() {
 		return id;
 	}
