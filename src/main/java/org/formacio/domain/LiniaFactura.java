@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,9 +23,9 @@ public class LiniaFactura {
 	@Column(name="lin_total")
     private Integer total;
 
-//	@OneToMany
-//	@JoinColumn(name="lin_factura")
-//	private Factura factura;
+	@ManyToOne
+	@JoinColumn(name="lin_factura")
+	private Factura factura;
 	
 	public Long getId() { return id; }
 	public void setId(Long id) { this.id = id; }
@@ -36,5 +36,7 @@ public class LiniaFactura {
 	public Integer getTotal() { return total; }
 	public void setTotal(Integer total) { this.total = total; }
 	
-	
+	public Factura getFactura() { return factura;}
+	public void setFactura(Factura factura) { this.factura = factura;}
+		
 }
