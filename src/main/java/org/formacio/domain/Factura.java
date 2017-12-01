@@ -30,28 +30,13 @@ public class Factura {
 	@JoinColumn(name="lin_factura")
 	private Set<LiniaFactura> linies = new HashSet<>();
 	
-	public Long getId() {
-		return id;
-	}
+	public Long getId() { return id; }
+	public void setId(Long id) { this.id = id; }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	public Client getClient() { return client; }
+	public void setClient(Client client) { this.client = client; }
 
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
-
-	public Set<LiniaFactura> getLinies() {
-		return linies;
-	}
-
-	public void setLinies(Set<LiniaFactura> linies) {
-		this.linies = linies;
-	}
+	public Set<LiniaFactura> getLinies() { return linies; }
+	public void setLinies(Set<LiniaFactura> linies) { this.linies = linies;}
 	
 }
